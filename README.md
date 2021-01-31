@@ -48,20 +48,21 @@
     * vantagem de separar a aplicação em módulos: carregamento sob demanda
 * Chamadas HTTP (request/cliente = json - HTTP methods - server)
     * HTTP client, módulo do angular p/ comunicação com o backend a ser importado no app.module
-* Interfaces
-* Variáveis de Ambiente
-* Loading e Tratamento de Erro
-* Operadores do RxJS
-* Observables e RxJS
+* **Interfaces**
+* **Variáveis de Ambiente**
+* **Loading e Tratamento de Erro**
+* **Operadores do RxJS**
+* **Observables e RxJS**
     * promises para tratar dados asincronos
-* Paginação
-* Rotas parametrizadas (angular router - router, activatedRouter)
-* Formulários (template driven: html vs data driven: reativo)
+* **Paginação**
+* **Rotas parametrizadas** (angular router - router, activatedRouter)
+* **Formulários** (template driven: html vs data driven: reativo)
     * FormsModule
     * Diretiva ngModel
     * Validação
     * Estilos na validação dos campos
     * ViewChild
+* **Service de Login**
 * 
 
 

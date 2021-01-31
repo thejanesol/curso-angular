@@ -1,6 +1,8 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
+import { LoginService } from './login.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -18,13 +20,14 @@ export class LoginComponent implements OnInit {
   email: string = "";
   passowrd: string = "";
 
-  constructor() { }
+  constructor(
+    private loginService: LoginService,
+  ) { }
 
   ngOnInit(): void {
   }
 
   onSubmit(form: any) {
-
     if(!form.valid){
       form.controls.email.markAsTouched();
       form.controls.password.markAsTouched();
@@ -40,6 +43,19 @@ export class LoginComponent implements OnInit {
       return;
     }
     // console.log(this.email)
+    this.login();
+  }
+
+  login (){
+    this.loginService.loginTo(this.email, this.passowrd)
+    .subscribe (
+      response => {
+        console.log('Usuário logado.')
+      },
+      error => {
+        console.log('A autenticação falhou. Usuário não está logado.')
+      }
+    )
   }
 
   showsError (nomeControle: string, form: NgForm) {
