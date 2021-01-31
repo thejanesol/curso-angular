@@ -1,0 +1,35 @@
+<h2>Extrato</h2>
+<div class="container texte-center">
+    <div class="spinner-border" role="status" *ngIf="estaCarregando">
+        <span class="sr-only">Loading</span>
+    </div>
+
+    <div *ngIf="erroNoCarregamento">
+        <h2>Falha no carregamento dos dados</h2>
+        <button (click)="carregarExtrato()">Tentar novamente</button>
+    </div>
+
+    <div *ngIf="!estaCarregando && !erroNoCarregamento">
+        <p>Pagina {{page}}</p>
+        <button class="btn btn-primary mr-5 mb-2" (click)="paginaAnterior()" [disabled]="page === 1">Página anterior</button>
+        <button class="btn btn-primary mb-2" (click)="proximaPagina()" [disabled]="page === 3">Próxima página</button>
+
+        <table class="table table-hover">
+            <tr>
+                <th>ID </th>
+                <th>Data </th>
+                <th>Descrição </th>
+                <th>Valor </th>
+                <th>Categoria </th>
+            </tr>
+            <!-- TH utilizado p/ titulos e td para o resto da tabela -->
+            <tr *ngFor="let transacao of transacoes">
+                <td>{{ transacao.id }}</td>
+                <td>{{ transacao.data | date }}</td>
+                <td>{{ transacao.descricao }}</td>
+                <td>{{ transacao.valor | currency: "BRL"}}</td>
+                <td>{{ transacao.categoria }}</td>
+            </tr>
+        </table>
+    </div>
+</div>

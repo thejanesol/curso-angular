@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+// Esse arquivo fica declarado lá no angular.json
+
+@import 'bootstrap';
+
+body {
+    margin: 25vh 0 15vh 0;
+
+    display: flex;
+    justify-content: center;
+
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+}

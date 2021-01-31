@@ -1,0 +1,14 @@
+<div class="spinner-border" role="status" *ngIf="estaCarregando">
+    <span class="sr-only">Loading...</span>
+</div>
+
+<div *ngIf="!estaCarregando" >
+
+    <h2>Detalhes do contato</h2>
+    <p>Nome: {{contato.nome}} </p>
+    <p>CPF: {{contato.cpf}} </p>
+    <p>Banco: {{contato.banco}} </p>
+    <p>Agência: {{contato.ag}} </p>
+    <p>Conta corrente: {{contato.cc}} </p>
+    <button class="btn btn-primary" (click)="returnToContatos()">Voltar</button>
+</div>

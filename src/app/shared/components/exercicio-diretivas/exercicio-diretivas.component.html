@@ -1,0 +1,70 @@
+<!-- 
+    * modificam elementos DOM e/ou seu comportamento. (componentes são diretivas!!)
+    * diretivas de estrutura: interagem com a view alterando layout do DOM (ex. ngFor, ngIf)
+    * diretivas de atributos: interagem com os elementos em que foram aplicadas, alterando sua aparencia/comportamento (ex. ngClass, ngStyle)
+    * diretivas com templates: possuem templates. 
+-->
+
+<!-- Diretiva NGIF: exibe elemento baseado em uma condição-->
+<div class="ngif">
+    <h3>ng if simples</h3>
+    <!-- Exibe uma informação baseada em uma condição -->
+    <p>O elemento deve ser mostrado? {{condition}}</p>
+    <div *ngIf="condition">Olá! Estou dentro do ngIf encurtado usando uma boolean como condição</div>
+    <button (click)="changeCondition()">Mostrar/esconder elemento</button>
+
+    <!-- Também é possivel utilizar o ngif numa sintaxe expandida:  -->
+    <ng-template [ngIf]="condition">
+        <p>Conteudo mostrado se condição verdadeira com sintaxe expandida!</p>
+    </ng-template>
+
+    <div *ngIf="sum(5,5) >= 10">Olá! Estou dentro do ngIf usando uma função como condição</div>
+</div>
+
+<div class="ngif">
+    <h3>ng if com else</h3>
+    <div *ngIf="condition; then thenBlock else elseBlock"></div>
+    <ng-template #thenBlock>
+        <p>Sou exibido quando a condição for true!</p>
+    </ng-template>
+    <ng-template #elseBlock>
+        <p>Sou exibido quando a condição e o then forem falsos!</p>
+    </ng-template>
+</div>
+<!-- O else só pode ser chamado com um ng-template! -->
+
+
+<!-- Diretiva NGFOR: repete um elemento no HTML baseado em um Array -->
+<div class="ng-for">
+    <h3>ng for</h3>
+    <p>Lista de frutas com o ng-for - ARRAY</p>
+    <ul>
+        <li *ngFor="let fruit of fruitsList">{{fruit}}</li>
+    </ul>
+
+    <p>Lista de carros com o ng-for - OBJECT</p>
+    <ul>
+        <!-- O index é uma variável nativa que foi atribuida a uma variável declarada... -->
+        <!-- Outro tipo de uso: index as index -->
+        <li *ngFor="let car of carsList; let index = index">
+           {{"Carro"}} {{index+1}}: {{car.placa}} - {{car.cor}}
+        </li>
+    </ul>
+</div>
+
+<!-- Desafio dos memes -->
+<!-- As imagens precisam estar na pasta assets!! -->
+<h2>Desafio dos memes - trabalhando com import de const e diretivas</h2>
+<div class="desafio">
+    <div class="memes-content" *ngFor="let categoria of MEMES">
+        <h3 class="category-title">Categoria: {{categoria.categoria}}</h3>
+        <div class="meme" *ngFor="let meme of categoria.memes; let even = even">
+            Titulo do meme: {{meme.titulo}}
+            <img class="meme__image" [src]="URL + meme.imagemURL" alt="imagem do meme"
+            *ngIf="even; else isEven">
+            <ng-template #isEven>
+                <p>Elemento possui index par (ngif), a imagem não será exibida</p>
+            </ng-template>
+        </div>
+    </div>
+</div>

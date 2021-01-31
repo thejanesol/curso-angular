@@ -1,0 +1,21 @@
+<hr>
+<h3>Exemplos de event binding</h3>
+
+<!-- Binding enviando informação de componente pai para compoenente filho  -->
+<p>{{ word }} {{ color }}</p>
+
+<!-- Usando o binding de propriedade -->
+<img class="image" [src]="getImage()" alt="">
+<hr>
+
+<p>Capturando informações do clique no console:</p>
+<button (click)="onClick($event)" (mouseenter)="mouseOn()">Clique aqui</button> <br>
+<hr>
+
+<p>Manipulando elemento através do input</p>
+<input type="text" [value]="inputValue" (keyup)="typed($event)"><br>
+
+valor do input = {{ inputValue }} <br>
+<hr>
+
+<button (click)="onClick2($event)">Emitir informação do click p/ elemento pai</button>

@@ -1,0 +1,43 @@
+.ngif {
+    margin: 2rem 0;
+    border: 2px solid seagreen;
+}
+
+.ng-for {
+    margin: 2rem 0;
+    border: 2px solid rgb(196, 56, 21);
+}
+
+.ng-for ul {
+    list-style: none;
+    padding-inline-start: 0;
+}
+
+.category-title {
+    font-weight: bold;
+}
+
+.memes-content {
+    margin: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    width: 80vw;
+    padding: 2rem;
+
+    border: 2px solid rgb(196, 56, 21);
+}
+
+.meme {
+    margin: 0.5rem 0 1rem 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    &__image {
+        width: 20vw;
+        height: 70vh;
+    }
+}

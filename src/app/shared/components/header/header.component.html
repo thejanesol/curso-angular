@@ -1,0 +1,18 @@
+<header class="header">
+    <h1 class="header__title">{{ title }}</h1>
+    <ul class="nav-bar">
+      <li><a routerLink="home" routerLinkActive="active">Home</a></li>
+      <li><a routerLink="/extrato" routerLinkActive="active">Extrato</a></li>
+      <li><a routerLink="/contatos" routerLinkActive="active">Contatos</a></li>
+      <li><a routerLink="/login" routerLinkActive="active">Login</a></li>
+    </ul>
+  </header>
+
+  <!-- Quando usamos a propriedade href, toda a aplicação é recarregada. 
+  Uma alternativa é utilizar o routerLink, que só modifica os componentes mostrados na tela -->
+
+  <!-- routerLinkActive para ter uma classe de css quando o
+    componente da rota estiver sendo mostrado! -->
+
+  <!-- routerLinkActiveOptions contorna o problema do link home ficar sempre ativo quando o 
+  path é vazio: [routerLinkActiveOptions] = '{exact: true}' -->

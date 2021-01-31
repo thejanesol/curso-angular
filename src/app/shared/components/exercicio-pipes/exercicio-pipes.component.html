@@ -1,0 +1,29 @@
+<!-- Os pipes são por default em inglês. Para transformá-los para outras linguas, é 
+preciso implementar uma biblioteca de internacionalização (https://angular.io/guide/i18n),
+que precisa ser importada lá no app.module.ts e ser colocada nos PROVIDERS -->
+<hr>
+<h2>Exercicio de pipes - Formatação de valores</h2>
+
+<p>Titulo: {{film.title | uppercase}}</p>
+<p>Avaliação: {{film.rate | number: '1.1-2' }}</p>
+<p>Preço do aluguel: {{film.rentalPrice | currency: "BRL"}}</p>
+<p>Data de lançamento: {{film.releaseDate | date: "shortDate"}}</p>
+
+<hr>
+<h2>Desafio pipes - Lista de compras</h2>
+<p>Utilizando pipes, exiba as informações do array de compras. Se o peso for zerado, 
+    será mostrado "sem peso" no lugar do número.
+</p>
+<div *ngFor="let item of shopping">
+    <ul>
+        <li><b>{{item.product | uppercase}}</b></li>
+        <li>Preço: {{item.price | currency: "BRL"}}</li>
+        <li>Quantidade: {{item.quantity}}</li>
+        <li *ngIf="item.weight > 0; else weightZero">Peso: {{item.weight | number: '1.1-2'}} kg</li>
+        <ng-template #weightZero>Peso: sem peso</ng-template>
+        <li>Data: {{item.date | date: "EEEE',' dd 'de' MMMM 'de' YYYY', às' HH':'mm"}}</li>
+        <!-- Aspas simples dentro de aspas duplas para scape ou
+            \'de\' (usando barra invertida) -->
+        <!-- PS: é possível injetar pipe no typescript (no construtor da classe) -->
+    </ul>
+</div>

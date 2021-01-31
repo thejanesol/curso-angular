@@ -1,0 +1,19 @@
+<!-- Diretivas de atributo -->
+<!-- Insere uma classe de CSS no elemento, baseado numa condição -->
+
+<h2>Exercicio de ngclass</h2>
+<button (click)="changeColor()">Mudar cor do elemento a partir da classe</button>
+<p [ngClass]="shouldBeGreen? 'green' : 'red'">Testando</p>
+
+<p [ngClass]="{
+    'green': shouldBeGreen,
+    'red': !shouldBeGreen
+}">Testando ng class com objeto -
+    torna possível mais opções de condição, diferente do operador ternário!!</p>
+
+<p [class]="shouldBeGreen? 'green' : 'red'">Testando propertyBinding Class -
+    propertybinding de uma condição</p>
+
+<p [class.green]="shouldBeGreen">o elemento só terá a classe verde se a condição for true, 
+    se for false, ele não terá nenhuma classe...
+</p>

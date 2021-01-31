@@ -1,0 +1,25 @@
+<!-- Para criar uma rota, é preciso cria-la no app-routing.module.ts 
+    e incluir o router outlet no template app.component -->
+
+<div class="text-center">
+    <form #heroForm="ngForm" (ngSubmit)="onSubmit(heroForm)" action="" class="form-signin pt-5">
+        <div class="p-2">
+            <input type="email" class="form-control" placeholder="Email" name="email" [(ngModel)]="email" required email
+                [ngClass]="showsError('email', heroForm) ? 'is-invalid' : ''" #emailInput>
+            <!-- ? = só tenta acessar se a variavel existir. Touched: Clicou e saiu! -->
+            <div *ngIf="showsError('email', heroForm)" class="invalid-feedback">Email invalido!</div>
+        </div>
+
+        <div class="p-2">
+            <input type="password" class="form-control" placeholder="Password" name="password" [(ngModel)]="passowrd"
+                required password [ngClass]="showsError('password', heroForm) ? 'is-invalid' : ''" #passwordInput>
+            <div *ngIf="showsError('password', heroForm)" class="invalid-feedback">Senha invalida!</div>
+        </div>
+
+
+        <div class="p-2">
+            <button type="submit" class="btn btn-lg btn-primary btn-block">
+                Login</button>
+        </div>
+    </form>
+</div>
