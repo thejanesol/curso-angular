@@ -1,4 +1,12 @@
-<div class="container p-5">
+<div class="spinner-border text-center" role="status" *ngIf="estaCarregando">
+    <span class="sr-only">Loading...</span>
+</div>
+
+<div *ngIf="erroNoCarregamento">
+    <h2>Falha no carregamento dos dados</h2>
+</div>
+
+<div class="container p-5" *ngIf="!estaCarregando && !erroNoCarregamento">
 
     <form [formGroup]="contatoForm" class="text-left">
         <div class="form-group">
@@ -9,7 +17,7 @@
 
         <div class="form-group">
             <label for="cpf">CPF</label>
-            <input type="number" class="form-control" name="cpf" id="cpf" placeholder="CPF" formControlName="cpf"
+            <input type="text" class="form-control" name="cpf" id="cpf" placeholder="CPF" formControlName="cpf"
             [class.is-invalid]="showsError('cpf')">
         </div>
 
@@ -21,16 +29,16 @@
 
         <div class="form-group">
             <label for="ag">Agência</label>
-            <input type="number" class="form-control" name="ag" id="ag" placeholder="Agência" formControlName="ag"
+            <input type="text" class="form-control" name="ag" id="ag" placeholder="Agência" formControlName="ag"
             [class.is-invalid]="showsError('ag')">
         </div>
 
         <div class="form-group">
             <label for="cc">Conta corrente</label>
-            <input type="number" class="form-control" name="cc" id="cc" placeholder="Conta corrente" formControlName="cc"
+            <input type="text" class="form-control" name="cc" id="cc" placeholder="Conta corrente" formControlName="cc"
             [class.is-invalid]="showsError('cc')">
         </div>
 
-        <button (click)="onSubmit()" class="btn btn-success">Criar contato</button>
+        <button (click)="onSubmit()" class="btn btn-success">{{isEditingContact() ? 'Salvar contato' : 'Criar contato'}}</button>
     </form>
 </div>

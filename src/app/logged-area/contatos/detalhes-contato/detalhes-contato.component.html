@@ -2,7 +2,11 @@
     <span class="sr-only">Loading...</span>
 </div>
 
-<div *ngIf="!estaCarregando" >
+<div *ngIf="erroNoCarregamento">
+    <h2>Falha no carregamento dos dados</h2>
+</div>
+
+<div *ngIf="!estaCarregando && !erroNoCarregamento" >
 
     <h2>Detalhes do contato</h2>
     <p>Nome: {{contato.nome}} </p>

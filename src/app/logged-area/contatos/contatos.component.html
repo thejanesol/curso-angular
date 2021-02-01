@@ -17,6 +17,7 @@
         <td class="p-3">{{ contato.nome }}</td>
         <td>
             <button class="btn btn-primary m-1" (click)="goToDetails(contato.id)">Ver detalhes</button>
+            <button class="btn btn-primary m-1" (click)="goToEdit(contato.id)">Edit</button>
             <button class="btn btn-danger m-1" (click)="removeContact(contato.id)">Deletar</button>
         </td>
     </tr>

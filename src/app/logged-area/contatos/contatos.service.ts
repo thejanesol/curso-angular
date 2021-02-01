@@ -27,19 +27,8 @@ export class ContatosService {
   createContato(contato: Contatos){
     return this.http.post<Contatos[]>(this.API_URL + '/contatos', contato);
   }
-}
 
-//Outras chamadas: 
-
-// Post:
-/* return this.http.post<Contatos[]>(`${this.API_URL}/contatos`, contato, {
-  headers: {
-    Authorization: 'TOKEN DE AUTENTICAÇÃO'
+  updateContato(id: number, contato: Contatos){
+    return this.http.put<Contatos>(`${this.API_URL}/contatos/${id}`, contato)
   }
-}}); */
-
-// Put: 
-// return this.http.put<Contatos[]>(`${this.API_URL}/contatos`, contato)
-
-// Delete: 
-// return this.http.delete<Contatos>(`${this.API_URL}/contatos/${id}`);
+}
