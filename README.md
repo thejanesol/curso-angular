@@ -70,6 +70,7 @@
 * **Guardas de Rota**
 * **Modularização e Lazy Loading**
     * flag --routing
+* **Rotas Filhas**
 * 
 
 # Aplicacao

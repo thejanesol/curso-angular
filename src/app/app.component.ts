@@ -6,8 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  // Binding enviando informação de componente pai para compoenente filho 
-  title = "Seja bem vindo!";
 
   singleWord = "palavra: ";
   favoriteColor = "blue";

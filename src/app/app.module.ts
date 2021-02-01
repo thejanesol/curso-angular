@@ -7,7 +7,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ExtratoComponent } from './extrato/extrato.component';
+import { ExtratoComponent } from './logged-area/extrato/extrato.component';
 import { LoginComponent } from './login/login.component';
 import { SharedModule } from './shared/shared.module';
 
