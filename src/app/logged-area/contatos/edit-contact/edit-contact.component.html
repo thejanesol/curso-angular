@@ -21,22 +21,24 @@
             [class.is-invalid]="showsError('cpf')">
         </div>
 
-        <div class="form-group">
-            <label for="banco">Banco</label>
-            <input type="text" class="form-control" name="banco" id="banco" placeholder="Banco" formControlName="banco"
-            [class.is-invalid]="showsError('banco')">
-        </div>
-
-        <div class="form-group">
-            <label for="ag">Agência</label>
-            <input type="text" class="form-control" name="ag" id="ag" placeholder="Agência" formControlName="ag"
-            [class.is-invalid]="showsError('ag')">
-        </div>
-
-        <div class="form-group">
-            <label for="cc">Conta corrente</label>
-            <input type="text" class="form-control" name="cc" id="cc" placeholder="Conta corrente" formControlName="cc"
-            [class.is-invalid]="showsError('cc')">
+        <div formGroupName="dadosBancarios">
+            <div class="form-group">
+                <label for="banco">Banco</label>
+                <input type="text" class="form-control" name="banco" id="banco" placeholder="Banco" formControlName="banco"
+                [class.is-invalid]="showsError('dadosBancarios.banco')">
+            </div>
+    
+            <div class="form-group">
+                <label for="ag">Agência</label>
+                <input type="text" class="form-control" name="ag" id="ag" placeholder="Agência" formControlName="ag"
+                [class.is-invalid]="showsError('dadosBancarios.ag')">
+            </div>
+    
+            <div class="form-group">
+                <label for="cc">Conta corrente</label>
+                <input type="text" class="form-control" name="cc" id="cc" placeholder="Conta corrente" formControlName="cc"
+                [class.is-invalid]="showsError('dadosBancarios.cc')">
+            </div>
         </div>
 
         <button (click)="onSubmit()" class="btn btn-success">{{isEditingContact() ? 'Salvar contato' : 'Criar contato'}}</button>

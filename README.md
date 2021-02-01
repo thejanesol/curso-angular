@@ -74,6 +74,7 @@
 * **Bibliotecas para angular**
     * [ng bootstrap](https://ng-bootstrap.github.io/)
     * [Toastr](https://www.npmjs.com/package/ngx-toastr)
+* **Formulários agrupados** - FormGroup
 
 # Aplicacao
 
