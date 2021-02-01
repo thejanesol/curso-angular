@@ -71,7 +71,9 @@
 * **Modularização e Lazy Loading**
     * flag --routing
 * **Rotas Filhas**
-* 
+* **Bibliotecas para angular** - [ng bootstrap](https://ng-bootstrap.github.io/)
+    * ng add @angular/localize
+    * npm install @ng-bootstrap/ng-bootstrap
 
 # Aplicacao
 
