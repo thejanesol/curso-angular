@@ -7,10 +7,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ContatosComponent } from './contatos/contatos.component';
-import { DetalhesContatoComponent } from './contatos/detalhes-contato/detalhes-contato.component';
 import { ExtratoComponent } from './extrato/extrato.component';
-import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { SharedModule } from './shared/shared.module';
 
@@ -19,11 +16,8 @@ registerLocaleData(localePt, "pt")
 @NgModule({ //decorator que indica que a classe é um module + metadados
   declarations: [ //importação dos componentes
     AppComponent,
-    HomeComponent,
     LoginComponent,
     ExtratoComponent,
-    ContatosComponent,
-    DetalhesContatoComponent,
   ],
 
   imports: [ //importação de outros modules

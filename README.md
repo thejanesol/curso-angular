@@ -68,8 +68,9 @@
     * Session Storage
     * Cookies
 * **Guardas de Rota**
+* **Modularização e Lazy Loading**
+    * flag --routing
 * 
-
 
 # Aplicacao
 
