@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { finalize, take } from 'rxjs/operators';
 
 import { Contatos } from './contatos.interface';
@@ -18,7 +19,8 @@ export class ContatosComponent implements OnInit {
 
   constructor(
     private contatosService: ContatosService,
-    private router: Router //prove navegação e manipulação da URL
+    private router: Router, //provê navegação e manipulação da URL
+    private toastr: ToastrService,
   ) { }
 
   ngOnInit(): void {
@@ -61,6 +63,7 @@ export class ContatosComponent implements OnInit {
 
   onSuccessDeleteContact(idContato: number) {
     //Simulação de remoção pois API FAKE!!
+    this.toastr.success('Contato deletado com sucesso!', 'OK');
     this.contatos = this.contatos.filter(contatos => contatos.id !== idContato);
   }
 
