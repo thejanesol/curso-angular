@@ -2,6 +2,7 @@
 // Esse arquivo fica declarado lá no angular.json
 
 @import 'bootstrap';
+@import '~ngx-toastr/toastr-bs4-alert';
 
 body {
     margin: 25vh 0 15vh 0;

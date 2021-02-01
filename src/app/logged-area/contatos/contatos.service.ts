@@ -19,6 +19,10 @@ export class ContatosService {
   getContato (id: number) {
     return this.http.get<Contatos>(`${this.API_URL}/contatos/${id}`);
   }
+
+  deleteContact(id: number) {
+    return this.http.delete<Contatos>(`${this.API_URL}/contatos/${id}`);
+  }
 }
 
 //Outras chamadas: 

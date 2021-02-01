@@ -6,13 +6,15 @@
 <div *ngIf="!estaCarregando">
 <table class="table table-hover">
     <tr>
-        <th>Ações </th>
         <th>Nome </th>
+        <th class="text-right">Ações </th>
+        <th class="text-center"></th>
     </tr>
 
     <tr *ngFor="let contato of contatos">
-        <td><button class="btn btn-primary" (click)="goToDetails(contato.id)">Ver detalhes</button></td>
         <td class="p-3">{{ contato.nome }}</td>
+        <td><button class="btn btn-primary m-1" (click)="goToDetails(contato.id)">Ver detalhes</button></td>
+        <td><button class="btn btn-danger m-1" (click)="removeContact(contato.id)">Deletar</button></td>
     </tr>
 </table>
 </div>
