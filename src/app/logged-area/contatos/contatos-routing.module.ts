@@ -3,10 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { ContatosComponent } from './contatos.component';
 import { DetalhesContatoComponent } from './detalhes-contato/detalhes-contato.component';
+import { NewContactComponent } from './new-contact/new-contact.component';
 
 const routes: Routes = [
   {path: '', component: ContatosComponent},
-  {path: 'id', component: DetalhesContatoComponent}
+  {path: 'novo', component: NewContactComponent},
+  {path: ':id', component: DetalhesContatoComponent},
 ];
 
 @NgModule({

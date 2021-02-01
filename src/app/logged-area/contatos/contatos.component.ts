@@ -70,4 +70,8 @@ export class ContatosComponent implements OnInit {
   onErrorDeleteContact() {
 
   }
+
+  newContact (){
+    this.router.navigate(['contatos/novo']);
+  }
 }

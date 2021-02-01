@@ -23,6 +23,10 @@ export class ContatosService {
   deleteContact(id: number) {
     return this.http.delete<Contatos>(`${this.API_URL}/contatos/${id}`);
   }
+
+  createContato(contato: Contatos){
+    return this.http.post<Contatos[]>(this.API_URL + '/contatos', contato);
+  }
 }
 
 //Outras chamadas: 
