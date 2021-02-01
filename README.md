@@ -77,6 +77,9 @@
 * **Formulários agrupados** - FormGroup
 * **Headers com HTTP Interceptor**
     * ng generate interceptor
+* **Subindo aplicação no Firebase**
+    * ng build --prod = prepara aplicação p ambiente de produção
+    * [Deploying an Angular App to Firebase Hosting tutorial](https://alligator.io/angular/deploying-angular-app-to-firebase/)
 
 
 # Aplicacao
