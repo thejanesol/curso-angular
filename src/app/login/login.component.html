@@ -16,10 +16,15 @@
             <div *ngIf="showsError('password', heroForm)" class="invalid-feedback">Senha invalida!</div>
         </div>
 
+        <p *ngIf="loginError">Usuário ou senha inválidos.</p>
 
         <div class="p-2">
-            <button type="submit" class="btn btn-lg btn-primary btn-block">
+            <button type="submit" class="btn btn-lg btn-primary btn-block" [disabled]="loading">
                 Login</button>
         </div>
     </form>
+
+    <div *ngIf="loading" class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
 </div>

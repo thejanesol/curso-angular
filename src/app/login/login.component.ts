@@ -1,5 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+import { finalize } from 'rxjs/internal/operators/finalize';
 
 import { LoginService } from './login.service';
 
@@ -9,6 +11,9 @@ import { LoginService } from './login.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+
+  loading: boolean = false;
+  loginError!: boolean;
 
   //Essa variavel é uma referencia ao HTML
   @ViewChild('emailInput')
@@ -22,13 +27,15 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private loginService: LoginService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
   }
 
   onSubmit(form: any) {
-    if(!form.valid){
+    this.loginError = false;
+    if (!form.valid) {
       form.controls.email.markAsTouched();
       form.controls.password.markAsTouched();
 
@@ -39,27 +46,35 @@ export class LoginComponent implements OnInit {
       if (form.controls.password.invalid) {
         this.passwordInput.nativeElement.focus();
       }
-    
+
       return;
     }
     // console.log(this.email)
     this.login();
   }
 
-  login (){
+  login() {
+    this.loading = true;
     this.loginService.loginTo(this.email, this.passowrd)
-    .subscribe (
-      response => {
-        console.log('Usuário logado.')
-      },
-      error => {
-        console.log('A autenticação falhou. Usuário não está logado.')
-      }
-    )
+      .pipe(
+        finalize(() => this.loading = false)
+      )
+      .subscribe(
+        response => this.onLoginSucess(),
+        error => this.onLoginError()
+      )
   }
 
-  showsError (nomeControle: string, form: NgForm) {
-    if (!form.controls[nomeControle]){
+  onLoginSucess() {
+    this.router.navigate([`home`])
+  }
+
+  onLoginError() {
+    this.loginError = true;
+  }
+
+  showsError(nomeControle: string, form: NgForm) {
+    if (!form.controls[nomeControle]) {
       return false;
     }
     return form.controls[nomeControle]?.invalid && form.controls[nomeControle]?.touched;

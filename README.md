@@ -63,6 +63,11 @@
     * Estilos na validação dos campos
     * ViewChild
 * **Service de Login**
+* **Service de Autenticação**
+    * Local Storage
+    * Session Storage
+    * Cookies
+* **Guardas de Rota**
 * 
 
 
