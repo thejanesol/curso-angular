@@ -75,6 +75,9 @@
     * [ng bootstrap](https://ng-bootstrap.github.io/)
     * [Toastr](https://www.npmjs.com/package/ngx-toastr)
 * **Formulários agrupados** - FormGroup
+* **Headers com HTTP Interceptor**
+    * ng generate interceptor
+
 
 # Aplicacao
 

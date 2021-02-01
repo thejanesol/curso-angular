@@ -47,7 +47,7 @@ export class AuthService {
       this.token = savedToken;
       return this.token;
     }
-    return null;
+    return '';
   }
 
   isLogged (): boolean{

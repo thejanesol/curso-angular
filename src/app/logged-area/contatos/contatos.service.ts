@@ -9,7 +9,11 @@ import { Contatos } from './contatos.interface';
 })
 
 export class ContatosService {
-  constructor(private http: HttpClient) {}
+
+  constructor(
+    private http: HttpClient
+    ) {}
+
   API_URL = environment.API_URL;
 
   getContatos () {
